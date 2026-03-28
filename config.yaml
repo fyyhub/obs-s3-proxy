@@ -1,0 +1,35 @@
+# 华为OBS内网S3中转服务配置文件
+
+# 华为云OBS配置
+obs:
+  # OBS终端节点,根据您的桶所在区域填写
+  # 华北-北京四: obs.cn-north-4.myhuaweicloud.com
+  # 华东-上海一: obs.cn-east-3.myhuaweicloud.com
+  # 华南-广州: obs.cn-south-1.myhuaweicloud.com
+  endpoint: "obs.cn-north-4.myhuaweicloud.com"
+  
+  # 华为云访问密钥AK
+  access_key: "YOUR_HUAWEI_AK"
+  
+  # 华为云访问密钥SK
+  secret_key: "YOUR_HUAWEI_SK"
+  
+  # OBS区域
+  region: "cn-north-4"
+
+# 中转服务配置
+server:
+  # 监听地址,0.0.0.0表示监听所有网卡
+  host: "0.0.0.0"
+  
+  # 监听端口
+  port: 8080
+
+# 允许访问的客户端列表
+# 为每个客户端颁发独立的AK/SK
+clients:
+  - access_key: "client_access_key_1"
+    secret_key: "client_secret_key_1"
+  
+  - access_key: "client_access_key_2"
+    secret_key: "client_secret_key_2"
